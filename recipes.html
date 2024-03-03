@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet/less" type="text/css" href="styles.less"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script src="array.js" defer></script>
+</head>
+<body>
+    <div>
+        <a class="hamburger" href="#navbar">
+          <i class="fa fa-bars"></i>
+        </a>
+        <nav id="navbar">
+            <a class="close" href="#">
+                <i class="fa fa-close"></i>
+              </a>
+              <a class="twitter" href="https://twitter.com/mtcomfortelem"><i class="fa-brands fa-twitter"></i></a>
+          <ul>
+            <li><a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Home</a></li>
+            <li><a href="cards.html">Bulletin</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="title2">
+        <h1>Recipes in Web Programming</h1>
+      </div>
+      <div class="container">
+        <div class="column">
+          <div class="connector"></div>
+          <h1>Recipe 1:</h1>
+          <h3>Dynamically Changing Web Content</h3>
+          <div class="recipe">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>The DOM createElement method</li>
+              <li>The DOM append method</li>
+              <li>Template literals</li>
+              <li>The innerText method</li>
+              <li>the innerHTML method</li>
+            </ul>
+          </div>
+          <div class="directions">
+            <h3>Instructions:</h3>
+            <ol>
+              <li>Create a web document and fill with basic tags</li>
+              <li>To the body of the document, add a div element of class demo</li>
+              <li>Add script tags to the body of the document, just before the closing body tag</li>
+              <li>Now use the DOM method, querySelector to get a reference to the div of class demo</li>
+              <li>Use textContent method to add plain text</li>
+              <li>Add some HTML code. Use innerHTML method</li>
+              <li>Use the DOM createElement method, with append</li>
+            </ol>
+          </div>
+        <div class="demo">
+        </div>
+      </div>
+        <div class="column">
+          <div class="connector"></div>
+          <h1>Recipe 2:</h1>
+          <h3>Displaying JSON Data</h3>
+          <div class="recipe">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>The DOM createElement method</li>
+              <li>The DOM append method</li>
+              <li>Array of objects</li>
+              <li>Choice of images</li>
+            </ul>
+          </div>
+          <div class="directions">
+            <h3>Instructions:</h3>
+            <p>JSON stands for JavaScript Object Notation, and it comes close to an array of objects, like this array of animals below. Note, it is important to make sure that objects have common attributes, if these attributes are being used to display information.</p>
+            <p>Make sure that the images are referenced correctly, then you can use the techniques in Recipe #1 to display the animals on a web page. You can use a simple for or while, or array method forEach.</p>
+          </div>
+        <div class="demo2">
+        </div>
+      </div>
+        <div class="column">
+          <div class="connector"></div>
+          <h1>Recipe 3:</h1>
+          <h3>Finding JSON Data</h3>
+          <div class="recipe">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>The array forEach method</li>
+              <li>A source array of objects</li>
+              <li>An empty array of objects</li>
+              <li>The array method, push</li>
+            </ul>
+          </div>
+          <div class="directions">
+            <h3>Instructions:</h3>
+            <p>Using the same array of objects, use either find or a combination of some type of iteration and find. You can substitute your own logic instead of find, if you iterate through the array - adding each found item to the array.</p>
+            <p>Suppose we wanted to find all dogs with age greater than 3...</p>
+          </div>
+        <div class="demo3">
+          <h3>Inspect the console to see the new array!</h3>
+        </div>
+      </div>
+      <div class="column">
+        <div class="connector"></div>
+        <h1>Recipe Feedback</h1>
+        <h3>What do YOU think?</h3>
+        <div class="recipe">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>Use of a form</li>
+            <li>Use of fieldsets</li>
+            <li>Use of radio buttons</li>
+            <li>Use of textarea tag</li>
+          </ul>
+        </div>
+        <div class="directions">
+          <h3>Instructions:</h3>
+          <p>A minimal set of form controls (like a series of choices presented via radio buttons, check boxes, select lists).</p>
+        </div>
+      <div class="demo4">
+        <form id="recipeForm" method="get" action="recipeStuff.php">
+        <fieldset class="setOne">
+          <legend>Which recipe is the most challenging?</legend>
+          <input type="radio" id="recipeOpt1" name="recipeOptions" value="recipeOpt1">
+          <label for="recipeOpt1">Recipe #1</label><br/>
+          <input type="radio" id="recipeOpt2" name="recipeOptions" value="recipeOpt2">
+          <label for="recipeOpt2">Recipe #2</label><br/>
+          <input type="radio" id="recipeOpt3" name="recipeOptions" value="recipeOpt3">
+          <label for="recipeOpt3">Recipe #3</label><br/>
+        </fieldset>
+        <fieldset class="setTwo">
+          <legend>Your feedback is valued!</legend>
+          <label for="comments">Additional comments</label>
+          <textarea id="comments" name="comments" placeholder="Comments" style="height: 100px"></textarea>
+        </fieldset>
+        <input type="submit" id="process" value="Submit Responses"/>
+      </form>
+      </div>
+
+    </div>
+      </div>
+      <script>
+        let demoRef = document.querySelector(".demo");
+        demoRef.textContent = "Recipe 1, Simple Display";
+        demoRef.innerHTML = '<h3>Recipe1, Simple Display<h3><p>This is an important skill!</p>';
+        let newList = document.createElement("ul");
+        let listItem = document.createElement("li");
+        listItem.textContent = "Update a Page";
+        newList.append(listItem);
+        listItem = document.createElement("li");
+        listItem.textContent = "Create Page Content";
+        newList.append(listItem);
+        demoRef.append(newList);
+      </script>
+</body>
+</html>
